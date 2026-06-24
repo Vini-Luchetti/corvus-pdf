@@ -22,9 +22,11 @@ Duas operações. Sem complicação.
 
 **MESCLAR** — Adiciona N arquivos PDF à lista, define quais páginas de cada um entram (ou deixa em branco pra usar todas), escolhe a pasta e o nome do arquivo de saída. Gera 1 PDF.
 
-**SEPARAR** — Abre um ou mais PDFs e explode em arquivos individuais: uma página por arquivo, ou você define ranges específicos (cada range vira um arquivo separado).
+**SEPARAR** — Abre um ou mais PDFs e separa em arquivos individuais: uma página por arquivo, ou você define ranges específicos (cada range vira um arquivo separado).
 
-Sintaxe de páginas igual ao Windows ao imprimir: `1-3, 5, 7-9`
+Sintaxe de páginas igual ao Windows ao imprimir: `1-3 OU 1;3 OU 5,9 OU 5-9`
+
+Selecione o nome do arquivo de saída. Se gerar mais de um arquivo o nome utilizado para a saída tera mumeros sequenciais ao final do nome, na mesma ordem da divisão.
 
 ---
 
@@ -64,13 +66,13 @@ Para rodar direto do código, veja [Como usar (código-fonte)](#como-usar-códig
 
 ## Funcionalidades
 
-- Seleção de páginas por arquivo (`1-3, 5, 7-9` — igual ao Windows)
+- Seleção de páginas por arquivo (`1-3 OU 1;3 OU 5,9 OU 5-9` — igual ao Windows)
 - Reordenação da lista com ↑ ↓
 - Separar todas as páginas (uma por arquivo) ou por ranges definidos
 - Seletor de pasta de saída
 - Log em tempo real do processamento
 - Processamento em thread separada (janela não trava)
-- Interface âmbar CRT — porque pode
+- Interface âmbar CRT e intuitíva
 
 ---
 

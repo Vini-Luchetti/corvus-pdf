@@ -1,0 +1,20 @@
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.env
+venv/
+env/
+
+# VSCode
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini

@@ -94,22 +94,6 @@ python corvus_pdf.py
 
 ---
 
-## Como empacotar (.exe)
-
-```bash
-# Na pasta do projeto, com Python e pip disponíveis:
-build.bat
-```
-
-O executável é gerado em `dist\CorvusPDF.exe` e abre automaticamente a pasta.
-
-Ou manualmente:
-```bash
-pip install pyinstaller
-pyinstaller --onefile --noconsole --name CorvusPDF corvus_pdf.py
-```
-
----
 
 ## Estrutura
 

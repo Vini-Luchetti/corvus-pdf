@@ -42,7 +42,7 @@ Para rodar direto do código, veja [Como usar (código-fonte)](#como-usar-códig
 ╔══════════════════════════════════════════════╗
 ║  CORVUS PDF // v1.0    CORVUS LABS           ║
 ╠══════════════════════════════════════════════╣
-║  ▶ MESCLAR  │  SEPARAR                       ║
+║  ▶ MESCLAR  │  SEPARAR                      ║
 ╠══════════════════════════════════════════════╣
 ║  // ARQUIVOS · PÁGINAS (vazio = todas)       ║
 ║  ┌──────────────────────────────────────┐    ║
@@ -56,7 +56,7 @@ Para rodar direto do código, veja [Como usar (código-fonte)](#como-usar-códig
 ║  NOME: [ resultado.pdf               ]       ║
 ║  ──────────────────────────────────────      ║
 ║  → Montando 3 arquivo(s)...                  ║
-║  ▶  PROCESSAR                                ║
+║  ▶  PROCESSAR                               ║
 ╚══════════════════════════════════════════════╝
 ```
 

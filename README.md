@@ -4,7 +4,7 @@
 
 **Corvus PDF V6** é uma ferramenta desktop para Windows, construída em Python, para operações práticas com arquivos PDF.
 
-A V6 é o novo **baseline público** do projeto: uma versão funcional, modular e preparada para evoluir sem sacrificar o que já funciona.
+A V6 é o **baseline público** do projeto: funcional, modular e preparado para evoluir sem sacrificar o que já funciona.
 
 ## ✦ O que faz
 
@@ -12,14 +12,14 @@ A V6 é o novo **baseline público** do projeto: uma versão funcional, modular 
 - **Separar PDFs** — gera um arquivo por página ou trabalha com ranges específicos.
 - **Arrastar e soltar** arquivos PDF.
 - **Processamento assíncrono** — as operações são executadas fora da interface principal para manter a janela responsiva.
-- **Interface PySide6** — aplicação desktop nativa em Python/Qt.
+- **Interface PySide6** — aplicação desktop em Python/Qt.
 - **Sistema de temas** — tokens visuais centralizados e temas alternáveis.
 - **Build para Windows** — empacotamento com PyInstaller.
 
 ## 🧱 Arquitetura
 
 ```text
-CorvusPDF_V5_GUI/          # nome histórico do diretório; projeto: V6
+corvus-pdf/
 ├── app/
 │   ├── core/              # regras utilitárias
 │   ├── services/          # operações PDF e workers
@@ -60,17 +60,17 @@ No Windows:
 build.bat
 ```
 
-O executável é gerado em `dist/` — artefatos de build não fazem parte do código-fonte versionado.
+O executável é gerado em `dist/`. Artefatos de build e executáveis não fazem parte do código-fonte versionado.
 
 ## 🧭 Versionamento
 
-O projeto possui histórico anterior preservado no Git. A partir daqui, a nomenclatura pública passa a tratar esta linha como **V6**.
+O histórico anterior do projeto foi preservado no Git. A partir desta linha, a nomenclatura pública passa a tratar o projeto como **V6**.
 
-A regra é simples: **release funcional primeiro; evolução visual e experimental depois**. Nem toda experiência de bancada precisa virar uma release pública.
+A regra é simples: **release funcional primeiro; evolução experimental depois**. Nem toda experiência de bancada precisa virar uma release pública.
 
 ## 🔐 Licença
 
-A licença de redistribuição/reutilização ainda não foi definida. O projeto permanece público para acompanhamento e portfólio, mas não assume permissões adicionais que não tenham sido expressamente escolhidas.
+A licença de redistribuição/reutilização ainda não foi definida. O projeto permanece público para acompanhamento e portfólio, sem assumir permissões adicionais que não tenham sido expressamente escolhidas.
 
 ---
 

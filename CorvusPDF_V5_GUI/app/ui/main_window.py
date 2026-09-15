@@ -1,4 +1,4 @@
-"""MainWindow — App Shell do Corvus PDF.
+"""MainWindow — App Shell do Corvus PDF V6.
 
 Estrutura:
     ┌─── TopBar (logo + título + seletor de tema) ─────────────┐
@@ -12,11 +12,11 @@ from __future__ import annotations
 
 import os
 
-from PySide6.QtCore import Qt, QSize
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtWidgets import (
     QHBoxLayout, QLabel, QMainWindow, QMenu, QPushButton,
-    QSizePolicy, QStackedWidget, QVBoxLayout, QWidget,
+    QStackedWidget, QVBoxLayout, QWidget,
 )
 
 from app.ui.theme.manager import ThemeManager
@@ -53,7 +53,6 @@ class MainWindow(QMainWindow):
         root = QVBoxLayout(shell)
         root.setContentsMargins(0, 0, 0, 0)
         root.setSpacing(0)
-
         root.addWidget(self._build_topbar())
 
         body = QHBoxLayout()
@@ -62,8 +61,6 @@ class MainWindow(QMainWindow):
         body.addWidget(self._build_sidebar())
         body.addWidget(self._build_content(), 1)
         root.addLayout(body, 1)
-
-    # ── Top Bar ───────────────────────────────────────────────────────────────
 
     def _build_topbar(self) -> QWidget:
         bar = QWidget()
@@ -74,7 +71,6 @@ class MainWindow(QMainWindow):
         layout.setContentsMargins(16, 0, 16, 0)
         layout.setSpacing(12)
 
-        # Logo
         logo_path = os.path.normpath(os.path.join(_ASSETS_DIR, "corvo_logo.png"))
         if os.path.exists(logo_path):
             pix = QPixmap(logo_path).scaled(
@@ -86,7 +82,6 @@ class MainWindow(QMainWindow):
             logo_lbl.setPixmap(pix)
             layout.addWidget(logo_lbl)
 
-        # Título
         title = QLabel("Organizador PDF Corvus")
         title.setObjectName("AppTitle")
         layout.addWidget(title)
@@ -97,14 +92,12 @@ class MainWindow(QMainWindow):
 
         layout.addStretch()
 
-        # Seletor de tema compacto
         self._theme_btn = QPushButton()
         self._theme_btn.setObjectName("ThemeBtn")
         self._theme_btn.setCursor(Qt.CursorShape.PointingHandCursor)
         self._theme_btn.clicked.connect(self._open_theme_menu)
         self._update_theme_btn()
         layout.addWidget(self._theme_btn)
-
         return bar
 
     def _open_theme_menu(self) -> None:
@@ -113,11 +106,7 @@ class MainWindow(QMainWindow):
             icon = THEME_ICONS.get(name, "")
             action = menu.addAction(f"{icon}  {name}")
             action.setData(name)
-        chosen = menu.exec(
-            self._theme_btn.mapToGlobal(
-                self._theme_btn.rect().bottomLeft()
-            )
-        )
+        chosen = menu.exec(self._theme_btn.mapToGlobal(self._theme_btn.rect().bottomLeft()))
         if chosen and chosen.data():
             self._theme_mgr.apply(chosen.data())
             self._update_theme_btn()
@@ -126,8 +115,6 @@ class MainWindow(QMainWindow):
         name = self._theme_mgr.current
         icon = THEME_ICONS.get(name, "◐")
         self._theme_btn.setText(f"{icon}  {name}  ▾")
-
-    # ── Sidebar ───────────────────────────────────────────────────────────────
 
     def _build_sidebar(self) -> QWidget:
         sidebar = QWidget()
@@ -140,14 +127,13 @@ class MainWindow(QMainWindow):
 
         self._nav_buttons: dict[str, QPushButton] = {}
         nav_items = [
-            ("merge",  "📄  Mesclar"),
-            ("split",  "✂  Separar"),
-            ("about",  "ℹ  Sobre"),
+            ("merge", "📄  Mesclar"),
+            ("split", "✂  Separar"),
+            ("about", "ℹ  Sobre"),
         ]
         for key, label in nav_items:
             btn = QPushButton(label)
             btn.setObjectName("NavItem")
-            btn.setCheckable(False)
             btn.setProperty("active", False)
             btn.clicked.connect(lambda checked=False, k=key: self._navigate(k))
             self._nav_buttons[key] = btn
@@ -155,12 +141,10 @@ class MainWindow(QMainWindow):
 
         layout.addStretch()
 
-        # Versão discreta no rodapé da sidebar
-        ver = QLabel("v5.0.0")
+        ver = QLabel("v6.0.0")
         ver.setObjectName("FileMeta")
         ver.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(ver)
-
         return sidebar
 
     def _navigate(self, key: str) -> None:
@@ -169,8 +153,6 @@ class MainWindow(QMainWindow):
             btn.setStyle(btn.style())
         views = {"merge": 0, "split": 1, "about": 2}
         self._stack.setCurrentIndex(views.get(key, 0))
-
-    # ── Content Area ──────────────────────────────────────────────────────────
 
     def _build_content(self) -> QWidget:
         area = QWidget()
@@ -186,5 +168,4 @@ class MainWindow(QMainWindow):
         self._stack.addWidget(SplitView())
         self._stack.addWidget(AboutView())
         layout.addWidget(self._stack)
-
         return area

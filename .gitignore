@@ -2,35 +2,34 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyo
-*.pyd
 
 # Virtual environments
 .venv/
 venv/
 env/
-ENV/
 
 # Build artifacts
 build/
 dist/
+*.spec.bak
 *.exe
 *.zip
-*.pkg
-*.toc
 
-# IDEs
+# IDE / editor
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Local configuration / secrets
-.env
-.env.*
-!.env.example
-
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
-# PyInstaller backups
-*.spec.bak
+# Logs / local data
+*.log
+*.tmp
+
+# Secrets / environment
+.env
+.env.*
+!.env.example

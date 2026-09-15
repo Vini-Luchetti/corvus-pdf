@@ -1,0 +1,1 @@
+Temporary placeholder; V6 baseline is being prepared from the current working copy.

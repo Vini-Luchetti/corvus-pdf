@@ -1,4 +1,4 @@
-"""MainWindow — App Shell do Corvus PDF V6.
+"""MainWindow — App Shell do Corvus PDF V1.
 
 Estrutura:
     ┌─── TopBar (logo + título + seletor de tema) ─────────────┐
@@ -141,7 +141,7 @@ class MainWindow(QMainWindow):
 
         layout.addStretch()
 
-        ver = QLabel("v6.0.0")
+        ver = QLabel("v1.0.0")
         ver.setObjectName("FileMeta")
         ver.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(ver)

@@ -1,9 +1,13 @@
 # Changelog
 
-## V6.0.0
+## 1.0.0
 
-- PySide6 desktop interface established as the public baseline.
-- Merge and Split workflows retained.
-- Theme system and Corvus Labs visual identity included.
-- Windows build standardized with PyInstaller.
-- Repository structure cleaned for source-only versioning.
+First public release of Corvus PDF.
+
+- PySide6 desktop interface.
+- Merge and Split workflows.
+- Theme system and Corvus Labs visual identity.
+- Windows build with PyInstaller.
+- Public repository organized as source-only versioning.
+
+> Note: the project had earlier internal development iterations. The public line starts here at 1.0.0.

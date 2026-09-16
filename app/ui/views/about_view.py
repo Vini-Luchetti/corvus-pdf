@@ -14,7 +14,7 @@ from app.assets import asset_path
 
 
 class AboutView(QWidget):
-    """Tela Sobre — identidade do Corvus PDF V6 e seu ecossistema."""
+    """Tela Sobre — identidade do Corvus PDF 1.0 e seu ecossistema."""
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
@@ -60,7 +60,7 @@ class AboutView(QWidget):
         app_name.setStyleSheet("font-size: 16px; font-weight: 700; letter-spacing: 1.5px;")
         root.addWidget(app_name)
 
-        version = QLabel("v6.0.0")
+        version = QLabel("v1.0.0")
         version.setObjectName("SectionSubtitle")
         version.setAlignment(Qt.AlignmentFlag.AlignCenter)
         version.setStyleSheet("font-size: 12px; margin-bottom: 32px;")

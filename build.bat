@@ -1,12 +1,11 @@
 @echo off
 chcp 65001 > nul
 echo.
-echo  CORVUS LABS — Corvus PDF V6.0
+echo  CORVUS LABS — Corvus PDF 1.0.0
 echo  ────────────────────────────────────────
 echo.
 
 cd /d "%~dp0"
-
 echo  [1/3] Verificando dependencias...
 pip install -r requirements.txt --quiet
 if %ERRORLEVEL% NEQ 0 (

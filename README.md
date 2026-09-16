@@ -2,16 +2,16 @@
 
 > **Organizar documentos sem transformar uma tarefa simples em uma novela.**
 
-**Corvus PDF V6** é uma ferramenta desktop para Windows, construída em Python, para operações práticas com arquivos PDF.
+**Corvus PDF 1.0** é uma ferramenta desktop para Windows, construída em Python, para operações práticas com arquivos PDF.
 
-A V6 é o **baseline público** do projeto: funcional, modular e preparado para evoluir sem sacrificar o que já funciona.
+Esta é a **primeira versão pública** do projeto: simples, funcional e organizada para evoluir a partir daqui.
 
 ## ✦ O que faz
 
 - **Mesclar PDFs** — combina vários arquivos em um único PDF, com seleção opcional de páginas por arquivo.
 - **Separar PDFs** — gera um arquivo por página ou trabalha com ranges específicos.
 - **Arrastar e soltar** arquivos PDF.
-- **Processamento assíncrono** — as operações são executadas fora da interface principal para manter a janela responsiva.
+- **Processamento assíncrono** — operações fora da interface principal para manter a janela responsiva.
 - **Interface PySide6** — aplicação desktop em Python/Qt.
 - **Sistema de temas** — tokens visuais centralizados e temas alternáveis.
 - **Build para Windows** — empacotamento com PyInstaller.
@@ -34,7 +34,7 @@ corvus-pdf/
 └── build.bat
 ```
 
-A lógica de PDF é mantida separada da interface. Workers baseados em `QThread` executam as operações e comunicam resultado, log e erros por sinais Qt.
+A lógica de PDF fica separada da interface. Workers baseados em `QThread` executam as operações e comunicam resultados, logs e erros por sinais Qt.
 
 ## 🛠️ Stack
 
@@ -64,9 +64,9 @@ O executável é gerado em `dist/`. Artefatos de build e executáveis não fazem
 
 ## 🧭 Versionamento
 
-O histórico anterior do projeto foi preservado no Git. A partir desta linha, a nomenclatura pública passa a tratar o projeto como **V6**.
+A linha pública do projeto começa em **1.0.0**. Iterações anteriores permanecem no histórico do Git, mas não fazem parte da estrutura pública atual.
 
-A regra é simples: **release funcional primeiro; evolução experimental depois**. Nem toda experiência de bancada precisa virar uma release pública.
+A regra é simples: **release funcional primeiro; evolução depois**.
 
 ## 🔐 Licença
 
